@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go2Handyman</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- Intro Animation -->
@@ -18,12 +19,43 @@
       <div class="logo-container">
         <img src="logo.png" alt="Go2Handyman Logo" class="logo-small" />
       </div>
-      <nav>
+      <nav class="mega-nav">
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
+          <li class="dropdown">
+            <a href="#about">About</a>
+            <div class="dropdown-content">
+              <a href="#team">Our Team</a>
+              <a href="#mission">Mission</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#services">Services</a>
+            <div class="dropdown-content">
+              <a href="#repairs">Repairs</a>
+              <a href="#maintenance">Maintenance</a>
+              <a href="#installation">Installation</a>
+              <a href="#painting">Painting</a>
+              <a href="#fencing">Fencing</a>
+              <a href="#plumbing">Plumbing</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#quote">Request Quote</a>
+            <div class="dropdown-content">
+              <a href="#form">Quote Form</a>
+              <a href="#estimate">Estimates</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#reviews">Reviews</a>
+            <div class="dropdown-content">
+              <a href="#testimonials">Testimonials</a>
+              <a href="#ratings">Ratings</a>
+            </div>
+          </li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#donate">Donate</a></li>
         </ul>
       </nav>
     </header>
