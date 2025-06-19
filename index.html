@@ -4,10 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go2Handyman</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+
   <!-- Intro Animation -->
   <div id="intro">
     <img src="logo.png" alt="Go2Handyman Logo" class="logo" />
@@ -19,8 +23,16 @@
       <div class="logo-container">
         <img src="logo.png" alt="Go2Handyman Logo" class="logo-small" />
       </div>
+
+      <!-- Toggle Buttons -->
+      <div class="menu-controls">
+        <button id="themeToggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+        <button id="menuToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+      </div>
+
+      <!-- Navigation -->
       <nav class="mega-nav">
-        <ul>
+        <ul id="navList">
           <li><a href="#">Home</a></li>
           <li class="dropdown">
             <a href="#about">About</a>
@@ -60,23 +72,30 @@
       </nav>
     </header>
 
+    <!-- Hero Section -->
     <main>
-      <div class="hero">
+      <div class="hero" data-aos="fade-up" data-aos-duration="1000">
         <h1>Fixing the High Desert — One Project at a Time</h1>
         <p>Go2Handyman delivers reliable, professional handyman services with quality you can trust. From repairs to renovations — we’ve got you covered.</p>
       </div>
     </main>
 
+    <!-- Footer -->
     <footer>
       <a href="#donate">Donate</a>
     </footer>
   </div>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
   <script>
-    // Hide intro after disintegration
+    AOS.init();
+    // Hide intro manually as fallback (optional)
     window.addEventListener('load', () => {
       setTimeout(() => {
-        document.getElementById('intro').style.display = 'none';
+        const intro = document.getElementById('intro');
+        if (intro) intro.style.display = 'none';
       }, 3500);
     });
   </script>
