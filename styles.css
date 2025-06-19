@@ -24,6 +24,7 @@ body {
   color: var(--gray);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: var(--transition);
 }
 
 /* Intro Animation */
@@ -76,17 +77,38 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
+  transition: var(--transition);
 }
 
 /* Logo */
 .logo-container {
-  height: 100%;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .logo-small {
   height: 40px;
+}
+
+/* Menu Controls */
+.menu-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-controls button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--gray);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-controls button:hover {
+  color: var(--green);
 }
 
 /* Navigation */
@@ -125,22 +147,17 @@ header {
   min-width: 180px;
   border-radius: var(--radius);
   z-index: 1000;
+  transform: scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .dropdown:hover .dropdown-content {
   display: flex;
-  animation: dropdownFade 0.3s ease-in-out;
-}
-
-@keyframes dropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Hero Section */
@@ -183,23 +200,42 @@ footer a:hover {
   color: var(--green);
 }
 
-/* Responsive */
+/* Mobile Nav */
 @media (max-width: 768px) {
   .mega-nav ul {
     flex-direction: column;
-    gap: 0.75rem;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .mega-nav ul.open {
+    max-height: 600px;
+    padding: 1rem;
   }
 
   .dropdown-content {
     position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
     box-shadow: none;
     padding: 0.5rem 1rem;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: flex;
   }
 
   header {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .hero h1 {
@@ -209,4 +245,26 @@ footer a:hover {
   .hero p {
     font-size: 1rem;
   }
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header,
+body.dark .dropdown-content,
+body.dark footer {
+  background: #1e1e1e;
+}
+
+body.dark .mega-nav a,
+body.dark footer a,
+body.dark .menu-controls button {
+  color: #e0e0e0;
+}
+
+body.dark .hero {
+  background: linear-gradient(135deg, #1e7e34, #14592a);
 }
