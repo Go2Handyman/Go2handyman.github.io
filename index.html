@@ -2,102 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Go2Handyman</title>
-
-  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <header class="header">
+    <div class="logo">Go2Handyman</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Intro Animation -->
-  <div id="intro">
-    <img src="logo.png" alt="Go2Handyman Logo" class="logo" />
-  </div>
+  <section class="carousel-container">
+    <button class="carousel-btn left">&#8592;</button>
+    <div class="carousel">
+      <div class="carousel-item active" data-service="drywall">Drywall & Painting</div>
+      <div class="carousel-item" data-service="yard">Yard Cleanup</div>
+      <div class="carousel-item" data-service="fence">Fence Repair</div>
+      <div class="carousel-item" data-service="snake">Snake Barriers</div>
+    </div>
+    <button class="carousel-btn right">&#8594;</button>
+  </section>
 
-  <!-- Main Page -->
-  <div id="main">
-    <header>
-      <div class="logo-container">
-        <img src="logo.png" alt="Go2Handyman Logo" class="logo-small" />
-      </div>
+  <main id="service-content">
+    <!-- Dynamic content will appear here -->
+  </main>
 
-      <!-- Toggle Buttons -->
-      <div class="menu-controls">
-        <button id="themeToggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
-        <button id="menuToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
-      </div>
-
-      <!-- Navigation -->
-      <nav class="mega-nav">
-        <ul id="navList">
-          <li><a href="#">Home</a></li>
-          <li class="dropdown">
-            <a href="#about">About</a>
-            <div class="dropdown-content">
-              <a href="#team">Our Team</a>
-              <a href="#mission">Mission</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="#services">Services</a>
-            <div class="dropdown-content">
-              <a href="#repairs">Repairs</a>
-              <a href="#maintenance">Maintenance</a>
-              <a href="#installation">Installation</a>
-              <a href="#painting">Painting</a>
-              <a href="#fencing">Fencing</a>
-              <a href="#plumbing">Plumbing</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="#quote">Request Quote</a>
-            <div class="dropdown-content">
-              <a href="#form">Quote Form</a>
-              <a href="#estimate">Estimates</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="#reviews">Reviews</a>
-            <div class="dropdown-content">
-              <a href="#testimonials">Testimonials</a>
-              <a href="#ratings">Ratings</a>
-            </div>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#donate">Donate</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <main>
-      <div class="hero" data-aos="fade-up" data-aos-duration="1000">
-        <h1>Fixing the High Desert — One Project at a Time</h1>
-        <p>Go2Handyman delivers reliable, professional handyman services with quality you can trust. From repairs to renovations — we’ve got you covered.</p>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <a href="#donate">Donate</a>
-    </footer>
-  </div>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
-  <script>
-    AOS.init();
-    // Hide intro manually as fallback (optional)
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const intro = document.getElementById('intro');
-        if (intro) intro.style.display = 'none';
-      }, 3500);
-    });
-  </script>
+  <footer>
+    <p>&copy; 2025 Go2Handyman | Call us: 442-470-2150</p>
+  </footer>
 </body>
 </html>
