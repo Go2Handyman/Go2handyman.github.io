@@ -2,41 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Go2Handyman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contractor Services</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">Go2Handyman</div>
-    <nav class="nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="logo-overlay">
+    <img src="logo.png" alt="Company Logo" />
+  </div>
 
-  <section class="carousel-container">
-    <button class="carousel-btn left">&#8592;</button>
-    <div class="carousel">
-      <div class="carousel-item active" data-service="drywall">Drywall & Painting</div>
-      <div class="carousel-item" data-service="yard">Yard Cleanup</div>
-      <div class="carousel-item" data-service="fence">Fence Repair</div>
-      <div class="carousel-item" data-service="snake">Snake Barriers</div>
-    </div>
-    <button class="carousel-btn right">&#8594;</button>
-  </section>
+  <main id="main-content" class="hidden">
+    <header>
+      <img src="logo.png" alt="Company Logo" class="main-logo" />
+    </header>
+    <section class="carousel-container">
+      <div class="carousel" id="carousel">
+        <div class="carousel-item" data-category="plumbing">Plumbing</div>
+        <div class="carousel-item" data-category="electrical">Electrical</div>
+        <div class="carousel-item" data-category="carpentry">Carpentry</div>
+        <div class="carousel-item" data-category="hvac">HVAC</div>
+        <div class="carousel-item" data-category="painting">Painting</div>
+      </div>
+    </section>
 
-  <main id="service-content">
-    <!-- Dynamic content will appear here -->
+    <section id="details-container">
+      <div class="details" id="plumbing">
+        <ul>
+          <li><a href="price-pages/plumbing-install.html">Install New Fixtures</a></li>
+          <li><a href="price-pages/leak-repair.html">Leak Repairs</a></li>
+          <li><a href="price-pages/drain-cleaning.html">Drain Cleaning</a></li>
+        </ul>
+        <a class="book-now" href="price-pages/plumbing-install.html#book">Book Now</a>
+      </div>
+      <div class="details" id="electrical">
+        <ul>
+          <li><a href="price-pages/wiring.html">Home Wiring</a></li>
+          <li><a href="price-pages/lighting.html">Lighting Installation</a></li>
+        </ul>
+        <a class="book-now" href="price-pages/wiring.html#book">Book Now</a>
+      </div>
+      <div class="details" id="carpentry">
+        <ul>
+          <li><a href="price-pages/framing.html">Framing</a></li>
+          <li><a href="price-pages/sheds.html">Shed Construction</a></li>
+        </ul>
+        <a class="book-now" href="price-pages/framing.html#book">Book Now</a>
+      </div>
+      <div class="details" id="hvac">
+        <ul>
+          <li><a href="price-pages/ac-install.html">AC Install</a></li>
+          <li><a href="price-pages/heating-repair.html">Heating Repair</a></li>
+        </ul>
+        <a class="book-now" href="price-pages/ac-install.html#book">Book Now</a>
+      </div>
+      <div class="details" id="painting">
+        <ul>
+          <li><a href="price-pages/interior.html">Interior Painting</a></li>
+          <li><a href="price-pages/exterior.html">Exterior Painting</a></li>
+        </ul>
+        <a class="book-now" href="price-pages/interior.html#book">Book Now</a>
+      </div>
+    </section>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Go2Handyman | Call us: 442-470-2150</p>
-  </footer>
 </body>
 </html>
